@@ -43,7 +43,7 @@ export const projects: Project[] = [
       'One reproducible pipeline from process definition to evaluated amplitude — with every intermediate step inspectable.',
     stack: ['Python', 'QGRAF', 'FORM', 'Mathematica', 'FiniteFlow', 'Blade'],
     figure: null, // rendered as a paper-style algorithm block instead (GlasAlgorithm)
-    github: 'https://github.com/mahdihoumanii/Heston_Stochastic_Volatility_Calibration',
+    github: 'null',
   },
   {
     slug: 'qt-power',
@@ -218,7 +218,7 @@ export const projects: Project[] = [
       src: 'figures/heston/vol_surface.png',
       caption: 'Calibrated Heston implied-volatility surface',
     },
-    github: null,
+    github: 'https://github.com/mahdihoumanii/Heston_Stochastic_Volatility_Calibration',
   },
   {
     slug: 'volatility-option-pricing',
