@@ -1,4 +1,5 @@
-import { motion, useReducedMotion } from 'framer-motion'
+import { useEffect, useRef } from 'react'
+import { motion, useAnimation, useInView, useReducedMotion } from 'framer-motion'
 import Section from './shared/Section'
 import Tag from './shared/Tag'
 import Equation from './shared/Equation'
@@ -71,10 +72,19 @@ const stochastic = (() => {
 
 export default function Bridge() {
   const reduce = useReducedMotion()
+  const motifRef = useRef<HTMLDivElement>(null)
+  const inView = useInView(motifRef, { once: true, amount: 0.35 })
+  const controls = useAnimation()
+
+  useEffect(() => {
+    if (reduce || inView) {
+      controls.start({ pathLength: 1 })
+    }
+  }, [controls, inView, reduce])
 
   const draw = (delay: number) => ({
     initial: reduce ? false : { pathLength: 0 },
-    animate: { pathLength: 1 },
+    animate: controls,
     transition: { duration: 1.1, delay, ease: 'easeInOut' as const },
   })
 
@@ -89,7 +99,7 @@ export default function Bridge() {
       <Glow color="var(--color-cyan)" className="-right-24 bottom-0 h-[420px] w-[420px]" />
 
       {/* the morphing line */}
-      <div className="mb-12 overflow-x-auto md:overflow-visible">
+      <div ref={motifRef} className="mb-12 overflow-x-auto md:overflow-visible">
         <svg
           viewBox="0 0 800 130"
           className="block h-auto w-[800px] max-w-none md:w-full"
