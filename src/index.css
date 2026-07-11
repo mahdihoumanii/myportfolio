@@ -26,6 +26,10 @@ html {
   /* prevent iOS Safari font boosting from inflating some text blocks */
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  /* keep decorative overflow (glows, canvas) from widening the layout
+     viewport on iOS — hidden as fallback, clip where supported */
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -47,6 +51,7 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  overflow-x: clip;
 }
 
 ::selection {
@@ -69,6 +74,7 @@ body {
 }
 .katex-accent .katex-display {
   margin: 0;
+  max-width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
   padding: 0.25rem 0;
