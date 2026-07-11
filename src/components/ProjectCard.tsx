@@ -31,10 +31,14 @@ export default function ProjectCard({ project, index, serial, visual }: ProjectC
           <p className="font-mono text-xs tracking-[0.2em] text-faint uppercase">
             <span className="text-accent">{serial}</span> · {project.domain}
           </p>
+
           <h3 className="mt-4 font-serif text-2xl font-semibold tracking-tight text-fg sm:text-[2rem] sm:leading-tight">
             {project.title}
           </h3>
-          <p className="mt-4 text-[15px] leading-relaxed text-muted">{project.summary}</p>
+
+          <p className="mt-4 text-[15px] leading-relaxed text-muted">
+            {project.summary}
+          </p>
 
           <div className="mt-5 flex flex-wrap gap-2">
             {project.points.map((pt) => (
@@ -49,14 +53,16 @@ export default function ProjectCard({ project, index, serial, visual }: ProjectC
           <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-[11px] text-faint">
             <span className="text-accent/80">log</span>
             <span>{project.stack.join(' · ')}</span>
-            {project.github ? (
-              <a href={project.github} target="_blank" rel="noreferrer" className="text-accent hover:underline">
+
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noreferrer"
+                className="text-accent hover:underline"
+              >
                 source ↗
               </a>
-            ) : (
-              <span className="text-faint/70" title="Add the repository URL in src/data/projects.ts">
-                [repo link pending]
-              </span>
             )}
           </div>
         </div>
@@ -68,7 +74,9 @@ export default function ProjectCard({ project, index, serial, visual }: ProjectC
             <FigureSlot figure={project.figure} />
           ) : (
             <div className="grid-bg flex aspect-[16/10] items-center justify-center rounded-sm border border-line bg-ink-2">
-              <p className="font-mono text-xs text-faint">{project.domain.toLowerCase()}</p>
+              <p className="font-mono text-xs text-faint">
+                {project.domain.toLowerCase()}
+              </p>
             </div>
           )}
         </div>
