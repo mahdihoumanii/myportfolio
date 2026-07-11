@@ -110,3 +110,28 @@ target path; `ASSETS.md` at the repo root is the drop-in checklist.
 - Deploy: Vercel first, GH Pages backup (user choice).
 - Public email: `elmahdi.houmani@rwth-aachen.de` (user provided).
 - First version ships with placeholders for figures/photos/CV (user approved).
+
+## Revision — 2026-07-11 (same day): physics-first redirect
+
+User feedback after v1: too dry, too finance-first. Revised direction:
+
+- **Narrative:** physics → computational methods → Monte Carlo/uncertainty →
+  quant finance. Site must read as a theoretical physicist's research
+  portfolio that expands into quant, not a finance portfolio with physics.
+- **New order:** Hero → Journey → Research (particle physics) → Physics
+  projects → Bridge ("From Particles to Portfolios") → Quant projects →
+  Skills → CV → Contact.
+- **Hero:** physics-first subtitles; canvas animation is a scattering event
+  (beams, vertex, detector rings, colored outgoing tracks) that morphs into
+  stochastic Monte Carlo paths with a minimum-action path.
+- **New physics projects** (from user's CV/repos): GLAS (rendered as a
+  pipeline flow diagram, no plot), qT power corrections, Catani–Seymour NLO
+  subtraction, massive five-point amplitudes (thesis).
+- **Figures:** harvested from the actual papers/repos (qT paper plot, CS
+  report MadGraph comparison, thesis pentagon topologies, quant repo plots).
+- **Liveliness:** color palette extended (amber/violet/rose/green) — colored
+  hero tracks, radial glows behind sections, dark-theme Standard Model grid
+  with the top quark highlighted, colored skills constellation, tri-color
+  bridge line (gluon coil → propagator → stochastic path).
+- **CV facts updated** (grades, three research posts, languages C1/C1/B1–B2);
+  GitHub: github.com/mahdihoumanii.
