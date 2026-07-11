@@ -43,7 +43,7 @@ export const projects: Project[] = [
       'One reproducible pipeline from process definition to evaluated amplitude — with every intermediate step inspectable.',
     stack: ['Python', 'QGRAF', 'FORM', 'Mathematica', 'FiniteFlow', 'Blade'],
     figure: null, // rendered as a paper-style algorithm block instead (GlasAlgorithm)
-    github: null,
+    github: 'https://github.com/mahdihoumanii/Heston_Stochastic_Volatility_Calibration',
   },
   {
     slug: 'qt-power',
@@ -241,7 +241,7 @@ export const projects: Project[] = [
       src: 'figures/volatility/forecast_vs_realized.png',
       caption: 'Walk-forward volatility forecasts vs. realised volatility',
     },
-    github: null,
+    github: 'https://github.com/mahdihoumanii/volatility_modeling_option_pricing',
   },
   {
     slug: 'portfolio-risk',
