@@ -73,9 +73,8 @@ export default function Bridge() {
   const reduce = useReducedMotion()
 
   const draw = (delay: number) => ({
-    initial: reduce ? undefined : { pathLength: 0 },
-    whileInView: { pathLength: 1 },
-    viewport: { once: true, amount: 0.12 },
+    initial: reduce ? false : { pathLength: 0 },
+    animate: { pathLength: 1 },
     transition: { duration: 1.1, delay, ease: 'easeInOut' as const },
   })
 
