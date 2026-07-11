@@ -11,8 +11,8 @@ function HeroPhoto() {
       className="rounded-full p-[3px]"
       style={{
         background:
-          'conic-gradient(from 210deg, var(--color-amber), var(--color-orange), var(--color-accent), var(--color-violet), var(--color-amber))',
-        boxShadow: '0 0 36px color-mix(in srgb, var(--color-orange) 30%, transparent)',
+          'conic-gradient(from 210deg, var(--color-amber), var(--color-orange), var(--color-accent), var(--color-red), var(--color-amber))',
+        boxShadow: '0 0 36px color-mix(in srgb, var(--color-accent) 32%, transparent)',
       }}
     >
       <img
@@ -48,7 +48,7 @@ export default function Hero() {
             </motion.p>
             <motion.h1
               {...fade(0.15)}
-              className="max-w-4xl text-4xl font-semibold tracking-tight text-fg sm:text-6xl"
+              className="max-w-4xl font-serif text-5xl font-semibold tracking-tight text-fg sm:text-7xl"
             >
               {profile.name}
             </motion.h1>

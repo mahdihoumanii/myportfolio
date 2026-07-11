@@ -24,13 +24,13 @@ function Photo() {
 export default function CVSection() {
   const cvHref = `${import.meta.env.BASE_URL}${profile.cvPath}`
   return (
-    <Section id="cv" eyebrow="07 · Curriculum Vitae" title="Background at a glance">
+    <Section id="cv" eyebrow="Part VII · The Record" title="The record, at a glance">
       <div className="grid gap-8 md:grid-cols-[1fr_320px]">
         <ol className="flex flex-col gap-6">
           {profile.cvFacts.map((f) => (
             <li key={f.title} className="rounded-xl border border-line bg-ink-2/60 p-5">
               <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <h3 className="font-semibold text-fg">{f.title}</h3>
+                <h3 className="font-serif text-lg font-semibold text-fg">{f.title}</h3>
                 <p className="font-mono text-xs text-accent">{f.period}</p>
               </div>
               <p className="mt-1 text-sm text-muted">{f.org}</p>

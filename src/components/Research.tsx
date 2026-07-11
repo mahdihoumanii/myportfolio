@@ -3,6 +3,7 @@ import Tag from './shared/Tag'
 import Equation from './shared/Equation'
 import Glow from './shared/Glow'
 import StandardModel from './StandardModel'
+import FeynmanStory from './FeynmanStory'
 import { researchEquations } from '../data/equations'
 
 const topics = [
@@ -23,12 +24,15 @@ export default function Research() {
   return (
     <Section
       id="research"
-      eyebrow="02 · Research — Theoretical Particle Physics"
+      eyebrow="Part II · The Physics"
       title="Precision QCD for the top quark"
       lede="My scientific home is perturbative quantum field theory: computing collider observables — especially for processes like pp → tt̄g — precisely enough that experiment can tell us something new."
     >
-      <Glow color="var(--color-amber)" className="-top-20 right-0 h-[420px] w-[420px]" />
-      <Glow color="var(--color-violet)" className="bottom-0 -left-40 h-[380px] w-[380px]" />
+      <Glow color="var(--color-accent)" className="-top-20 right-0 h-[420px] w-[420px]" />
+      <Glow color="var(--color-cyan)" className="bottom-0 -left-40 h-[380px] w-[380px]" />
+
+      <FeynmanStory />
+
       <div className="grid gap-10 md:grid-cols-[1.1fr_1fr] md:gap-14">
         <div className="min-w-0">
           <p className="text-[15px] leading-relaxed text-muted">

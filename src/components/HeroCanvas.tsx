@@ -9,11 +9,12 @@ import { useEffect, useRef } from 'react'
  */
 
 // Must visually match the @theme tokens in index.css.
-const ACCENT = '#6fd3e8'
-const RING = '#3a4a5e'
-const TARGET = '#8b98a9'
-// event-display palette: mostly warm particle tracks with cool accents
-const TRACK_COLORS = ['#ffc857', '#ffc857', '#ff9457', '#ff6b6b', '#6fd3e8', '#a78bfa', '#f47ea9']
+const GOLD = '#d3ab5f'
+const CYAN = '#5fd4e4' // Monte Carlo energy — the highlighted path only
+const RING = '#4a4133'
+const TARGET = '#a89c86'
+// event-display palette: brass, copper, oxblood, emerald, violet — one cyan
+const TRACK_COLORS = ['#d3ab5f', '#d3ab5f', '#c07a4a', '#a1454f', '#55a583', '#a08cc0', '#5fd4e4']
 
 const N_TRACKS = 26
 const N_STEPS = 200
@@ -136,7 +137,7 @@ export default function HeroCanvas() {
 
       // incoming beams (from left and lower-left toward vertex)
       if (beamP > 0) {
-        ctx.strokeStyle = ACCENT
+        ctx.strokeStyle = GOLD
         ctx.lineWidth = 1.2
         ctx.globalAlpha = 0.5 * (1 - m * 0.7) * alpha
         for (const from of [
@@ -150,8 +151,8 @@ export default function HeroCanvas() {
         }
         // vertex glow — warm, like an interaction point
         ctx.globalAlpha = (0.95 - m * 0.5) * alpha
-        ctx.fillStyle = '#ffc857'
-        ctx.shadowColor = '#ffc857'
+        ctx.fillStyle = GOLD
+        ctx.shadowColor = GOLD
         ctx.shadowBlur = 16 * (1 - m * 0.6)
         ctx.beginPath()
         ctx.arc(v.x, v.y, 3, 0, Math.PI * 2)
@@ -205,9 +206,9 @@ export default function HeroCanvas() {
       if (starP > 0) {
         ctx.save()
         ctx.globalAlpha = 0.9 * alpha
-        ctx.strokeStyle = ACCENT
+        ctx.strokeStyle = CYAN
         ctx.lineWidth = 1.8
-        ctx.shadowColor = ACCENT
+        ctx.shadowColor = CYAN
         ctx.shadowBlur = 12
         ctx.beginPath()
         const steps = Math.max(1, Math.floor(starP * N_STEPS))

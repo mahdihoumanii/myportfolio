@@ -11,7 +11,7 @@ export default function FigureSlot({ figure }: { figure: ProjectFigure }) {
 
   if (failed) {
     return (
-      <div className="flex aspect-[16/10] w-full flex-col items-center justify-center gap-3 rounded-lg border border-dashed border-line bg-ink-2 p-6 text-center">
+      <div className="flex aspect-[16/10] w-full flex-col items-center justify-center gap-3 rounded-sm border border-dashed border-line bg-ink-2 p-6 text-center">
         <svg className="h-8 w-8 text-faint" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
           <rect x="3" y="4" width="18" height="16" rx="2" />
           <path d="M3 15l5-5 4 4 3-3 6 6" />
@@ -26,7 +26,7 @@ export default function FigureSlot({ figure }: { figure: ProjectFigure }) {
   }
 
   return (
-    <figure className="overflow-hidden rounded-lg border border-line bg-ink-2">
+    <figure className="overflow-hidden rounded-sm border border-line bg-ink-2">
       <img
         src={src}
         alt={figure.caption}

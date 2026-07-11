@@ -6,12 +6,12 @@ export default function Contact() {
   return (
     <Section
       id="contact"
-      eyebrow="08 · Contact"
+      eyebrow="Part VIII · Correspondence"
       title="Let’s talk"
       lede="Open to conversations about research, quantitative modelling, scientific computing, and data science — academic or industry."
     >
-      <Glow color="var(--color-orange)" className="-top-10 right-0 h-[420px] w-[420px]" />
-      <Glow color="var(--color-amber)" className="bottom-0 -left-24 h-[360px] w-[360px]" />
+      <Glow color="var(--color-accent)" className="-top-10 right-0 h-[420px] w-[420px]" />
+      <Glow color="var(--color-orange)" className="bottom-0 -left-24 h-[360px] w-[360px]" />
       <div className="rounded-xl border border-line bg-ink-2/60 p-8 sm:p-10">
         <a
           href={`mailto:${profile.email}`}
@@ -35,7 +35,7 @@ export default function Contact() {
           <span className="text-muted">{profile.location}</span>
         </div>
       </div>
-      <p className="mx-auto mt-16 max-w-3xl text-center text-[15px] leading-relaxed text-faint italic">
+      <p className="mx-auto mt-16 max-w-3xl text-center font-serif text-lg leading-relaxed text-muted italic">
         “{profile.narrative}”
       </p>
     </Section>

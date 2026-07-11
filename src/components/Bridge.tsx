@@ -79,18 +79,18 @@ export default function Bridge() {
   return (
     <Section
       id="bridge"
-      eyebrow="04 · From Particles to Portfolios"
-      title="Monte Carlo across physics and finance"
+      eyebrow="Part IV · The Bridge"
+      title="From collisions to markets"
       lede="The transition from scattering amplitudes to derivatives is not a career change — it is the same computational discipline pointed at a different stochastic system."
     >
-      <Glow color="var(--color-amber)" className="top-10 -left-32 h-[400px] w-[400px]" />
-      <Glow color="var(--color-accent)" className="-right-24 bottom-0 h-[420px] w-[420px]" />
+      <Glow color="var(--color-accent)" className="top-10 -left-32 h-[400px] w-[400px]" />
+      <Glow color="var(--color-cyan)" className="-right-24 bottom-0 h-[420px] w-[420px]" />
       {/* the morphing line */}
       <div className="mb-12 overflow-x-auto">
         <svg viewBox="0 0 800 130" className="min-w-[640px]" aria-hidden>
-          <motion.path {...draw(0)} d={coil} fill="none" stroke="var(--color-amber)" strokeWidth="1.6" opacity="0.9" />
-          <motion.path {...draw(0.9)} d={propagator} fill="none" stroke="var(--color-violet)" strokeWidth="1.6" opacity="0.9" />
-          <motion.path {...draw(1.7)} d={stochastic} fill="none" stroke="var(--color-accent)" strokeWidth="1.6" opacity="0.9" />
+          <motion.path {...draw(0)} d={coil} fill="none" stroke="var(--color-accent)" strokeWidth="1.6" opacity="0.9" />
+          <motion.path {...draw(0.9)} d={propagator} fill="none" stroke="var(--color-muted)" strokeWidth="1.4" opacity="0.8" />
+          <motion.path {...draw(1.7)} d={stochastic} fill="none" stroke="var(--color-cyan)" strokeWidth="1.6" opacity="0.9" />
           <text x="120" y="110" textAnchor="middle" fontSize="11" fill="var(--color-faint)" className="font-mono">
             gluon exchange
           </text>

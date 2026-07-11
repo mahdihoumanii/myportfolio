@@ -24,7 +24,7 @@ const clusterColors: Record<string, string> = {
   symbolic: 'var(--color-accent)',
   'physics-software': 'var(--color-amber)',
   programming: 'var(--color-green)',
-  'scientific-computing': 'var(--color-accent)',
+  'scientific-computing': 'var(--color-cyan)',
   quant: 'var(--color-rose)',
   'data-eng': 'var(--color-amber)',
   soft: 'var(--color-green)',
@@ -49,7 +49,7 @@ export default function Skills() {
   return (
     <Section
       id="skills"
-      eyebrow="06 · Skills & Methods"
+      eyebrow="Part VI · The Toolkit"
       title="A physicist’s toolkit, end to end"
       lede="From perturbative QCD and finite-field methods to Monte Carlo pricing and data engineering — one connected set of methods. Select a cluster to explore it."
     >
@@ -176,7 +176,7 @@ export default function Skills() {
               exit={reduce ? undefined : { opacity: 0, y: -8 }}
               transition={{ duration: 0.25 }}
             >
-              <h3 className="flex items-center gap-2.5 text-lg font-semibold text-fg">
+              <h3 className="flex items-center gap-2.5 font-serif text-xl font-semibold text-fg">
                 <span
                   className="h-2.5 w-2.5 rounded-full"
                   style={{ background: clusterColors[cluster.id] ?? 'var(--color-accent)' }}

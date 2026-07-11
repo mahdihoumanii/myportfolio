@@ -21,9 +21,14 @@ export default function Section({ id, eyebrow, title, lede, children, className 
         transition={{ duration: 0.6, ease: 'easeOut' }}
         className="mb-12 md:mb-16"
       >
-        <p className="mb-3 font-mono text-xs tracking-[0.25em] text-accent uppercase">{eyebrow}</p>
-        <h2 className="max-w-3xl text-3xl font-semibold tracking-tight text-fg sm:text-4xl">{title}</h2>
-        {lede && <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted">{lede}</p>}
+        <div className="mb-4 flex items-center gap-4">
+          <span aria-hidden className="h-px w-10 bg-accent/70" />
+          <p className="font-mono text-xs tracking-[0.25em] text-accent uppercase">{eyebrow}</p>
+        </div>
+        <h2 className="max-w-3xl font-serif text-4xl font-semibold tracking-tight text-fg sm:text-5xl">
+          {title}
+        </h2>
+        {lede && <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted">{lede}</p>}
       </motion.header>
       {children}
     </section>
