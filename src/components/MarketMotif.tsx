@@ -28,15 +28,20 @@ const bandPath =
 export default function MarketMotif() {
   const reduce = useReducedMotion()
   return (
-    <div className="mb-12 overflow-x-auto">
-      <svg viewBox={`0 0 ${W} ${H}`} className="min-w-[560px]" aria-hidden>
+      <div className="mb-12 overflow-hidden">
+        <svg
+          viewBox={`0 0 ${W} ${H}`}
+          className="block h-auto w-full"
+          preserveAspectRatio="xMidYMid meet"
+          aria-hidden
+        >
         {/* volatility band */}
         <motion.path
           d={bandPath}
           fill="var(--color-accent)"
           initial={reduce ? undefined : { opacity: 0 }}
           whileInView={{ opacity: 0.07 }}
-          viewport={{ once: true, margin: '-60px' }}
+          viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 1.2, delay: 0.8 }}
         />
         {/* candles */}
@@ -52,7 +57,7 @@ export default function MarketMotif() {
               key={i}
               initial={reduce ? undefined : { opacity: 0 }}
               whileInView={{ opacity: 0.5 }}
-              viewport={{ once: true, margin: '-60px' }}
+              viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.3, delay: reduce ? 0 : 0.05 * i }}
             >
               <line x1={x} y1={top - 6} x2={x} y2={top + h + 6} stroke={color} strokeWidth="1" opacity="0.5" />
@@ -68,7 +73,7 @@ export default function MarketMotif() {
           strokeWidth="1.8"
           initial={reduce ? undefined : { pathLength: 0 }}
           whileInView={{ pathLength: 1 }}
-          viewport={{ once: true, margin: '-60px' }}
+          viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 1.6, ease: 'easeInOut' }}
         />
         <text x={X0} y={H - 2} fontSize="11" fill="var(--color-faint)" className="font-mono">
