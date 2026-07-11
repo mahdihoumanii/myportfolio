@@ -129,7 +129,7 @@ function ConvergencePlot({ result }: { result: McResult }) {
       <text x={PAD.l - 6} y={yOf(yMin) + 4} textAnchor="end" fontSize="9.5" fill="var(--color-faint)" className="font-mono">
         {yMin.toFixed(2)}
       </text>
-      <text x={W - PAD.r} y={H - 4} textAnchor="end" fontSize="10" fill="var(--color-faint)" className="font-mono">
+      <text x={PAD.l + 4} y={PAD.t + 10} fontSize="10" fill="var(--color-faint)" className="font-mono">
         running estimate ± 95% CI vs N · SE ∝ 1/√N
       </text>
     </svg>

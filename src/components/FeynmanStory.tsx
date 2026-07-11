@@ -38,8 +38,8 @@ function coil(x1: number, y1: number, x2: number, y2: number, loops: number, r =
 }
 
 // ---- act 2: the diagram (gg → tt̄, s-channel) ----
-const gluonTop = coil(345, 58, 452, 102, 5)
-const gluonBottom = coil(345, 162, 452, 118, 5)
+const gluonTop = coil(374, 70, 452, 102, 4)
+const gluonBottom = coil(374, 150, 452, 118, 4)
 const propagator = coil(455, 110, 530, 110, 4)
 const topLine = 'M 532 110 L 596 58'
 const antitopLine = 'M 532 110 L 596 162'
@@ -114,16 +114,16 @@ export default function FeynmanStory() {
         <motion.path {...draw(2.0, 0.5)} d={propagator} stroke={GOLD} strokeWidth="1.3" fill="none" opacity="0.95" />
         <motion.path {...draw(2.4, 0.5)} d={topLine} stroke={IVORY} strokeWidth="1.5" fill="none" />
         <motion.path {...draw(2.4, 0.5)} d={antitopLine} stroke={IVORY} strokeWidth="1.5" fill="none" />
-        {/* fermion arrows */}
-        <motion.path {...appear(2.8)} d="M 566 80 l 10 -6 -3 11" fill="none" stroke={IVORY} strokeWidth="1.2" />
-        <motion.path {...appear(2.8)} d="M 573 145 l 3 11 -10 -6" fill="none" stroke={IVORY} strokeWidth="1.2" />
+        {/* fermion-flow arrows: t outgoing (away from vertex), t̄ pointing back in */}
+        <motion.path {...appear(2.8)} d="M 563.7 90 L 568.7 80.2 L 558.1 83" fill="none" stroke={IVORY} strokeWidth="1.2" />
+        <motion.path {...appear(2.8)} d="M 564.2 142.3 L 559.3 132.5 L 569.9 135.3" fill="none" stroke={IVORY} strokeWidth="1.2" />
         {/* vertices */}
         <motion.circle {...appear(2.2)} cx="453" cy="110" r="2.6" fill={GOLD} />
         <motion.circle {...appear(2.4)} cx="531" cy="110" r="2.6" fill={GOLD} />
         {/* labels */}
         <motion.g {...appear(2.9)}>
-          <text x="332" y="52" fontSize="14" fill={GOLD} className="font-serif" fontStyle="italic">g</text>
-          <text x="332" y="180" fontSize="14" fill={GOLD} className="font-serif" fontStyle="italic">g</text>
+          <text x="360" y="64" fontSize="14" fill={GOLD} className="font-serif" fontStyle="italic">g</text>
+          <text x="360" y="170" fontSize="14" fill={GOLD} className="font-serif" fontStyle="italic">g</text>
           <text x="604" y="58" fontSize="14" fill={IVORY} className="font-serif" fontStyle="italic">t</text>
           <text x="604" y="168" fontSize="14" fill={IVORY} className="font-serif" fontStyle="italic">t̄</text>
         </motion.g>
