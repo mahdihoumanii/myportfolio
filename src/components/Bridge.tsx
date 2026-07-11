@@ -57,7 +57,9 @@ const coil = (() => {
   for (let i = 0; i < 11; i++) d += ' a 9 9 0 1 1 22 0'
   return d
 })()
+
 const propagator = 'M 252 60 L 430 60'
+
 const stochastic = (() => {
   const offs = [-6, 4, -10, -2, 8, -14, -4, -18, -8, -24, -14, -30, -20, -38, -26, -34, -44, -38, -50]
   let d = 'M 430 60'
@@ -69,10 +71,11 @@ const stochastic = (() => {
 
 export default function Bridge() {
   const reduce = useReducedMotion()
+
   const draw = (delay: number) => ({
     initial: reduce ? undefined : { pathLength: 0 },
     whileInView: { pathLength: 1 },
-    viewport: { once: true, amount: 0.15 },
+    viewport: { once: true, amount: 0.12 },
     transition: { duration: 1.1, delay, ease: 'easeInOut' as const },
   })
 
@@ -85,17 +88,42 @@ export default function Bridge() {
     >
       <Glow color="var(--color-accent)" className="top-10 -left-32 h-[400px] w-[400px]" />
       <Glow color="var(--color-cyan)" className="-right-24 bottom-0 h-[420px] w-[420px]" />
+
       {/* the morphing line */}
-      <div className="mb-12 overflow-hidden">
+      <div className="mb-12 overflow-x-auto md:overflow-visible">
         <svg
           viewBox="0 0 800 130"
-          className="block h-auto w-full"
+          className="block h-auto w-[800px] max-w-none md:w-full"
           preserveAspectRatio="xMidYMid meet"
           aria-hidden
         >
-          <motion.path {...draw(0)} d={coil} fill="none" stroke="var(--color-accent)" strokeWidth="1.6" opacity="0.9" />
-          <motion.path {...draw(0.9)} d={propagator} fill="none" stroke="var(--color-muted)" strokeWidth="1.4" opacity="0.8" />
-          <motion.path {...draw(1.7)} d={stochastic} fill="none" stroke="var(--color-cyan)" strokeWidth="1.6" opacity="0.9" />
+          <motion.path
+            {...draw(0)}
+            d={coil}
+            fill="none"
+            stroke="var(--color-accent)"
+            strokeWidth="2"
+            opacity="1"
+          />
+
+          <motion.path
+            {...draw(0.9)}
+            d={propagator}
+            fill="none"
+            stroke="var(--color-muted)"
+            strokeWidth="1.7"
+            opacity="0.95"
+          />
+
+          <motion.path
+            {...draw(1.7)}
+            d={stochastic}
+            fill="none"
+            stroke="var(--color-cyan)"
+            strokeWidth="2"
+            opacity="1"
+          />
+
           <text x="120" y="110" textAnchor="middle" fontSize="11" fill="var(--color-faint)" className="font-mono">
             gluon exchange
           </text>
@@ -114,8 +142,11 @@ export default function Bridge() {
         tools such as MadGraph. In quantitative finance it appears again as stochastic path
         simulation for option pricing, rare-event estimation, variance reduction, volatility
         modelling, and portfolio risk. The domains are different, but the computational discipline
-        is the same: <span className="text-fg">define the model, sample carefully, estimate
-        uncertainty, validate against benchmarks, and avoid fooling yourself.</span>
+        is the same:{' '}
+        <span className="text-fg">
+          define the model, sample carefully, estimate uncertainty, validate against benchmarks,
+          and avoid fooling yourself.
+        </span>
       </p>
 
       <div className="mt-10 grid gap-5 md:grid-cols-3">
