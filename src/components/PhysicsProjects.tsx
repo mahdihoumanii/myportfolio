@@ -1,7 +1,9 @@
+import { Fragment } from 'react'
 import Section from './shared/Section'
 import ProjectCard from './ProjectCard'
 import CompactCard from './CompactCard'
 import GlasAlgorithm from './GlasAlgorithm'
+import AmplitudeLabs from './AmplitudeLabs'
 import Glow from './shared/Glow'
 import { physicsFeatured, physicsCompact } from '../data/projects'
 
@@ -17,13 +19,15 @@ export default function PhysicsProjects() {
       <Glow color="var(--color-red)" className="-right-32 bottom-20 h-[380px] w-[380px]" />
       <div className="flex flex-col gap-14 md:gap-20">
         {physicsFeatured.map((p, i) => (
-          <ProjectCard
-            key={p.slug}
-            project={p}
-            index={i}
-            serial={`RS-${String(i + 1).padStart(2, '0')}`}
-            visual={p.slug === 'glas' ? <GlasAlgorithm /> : undefined}
-          />
+          <Fragment key={p.slug}>
+            <ProjectCard
+              project={p}
+              index={i}
+              serial={`RS-${String(i + 1).padStart(2, '0')}`}
+              visual={p.slug === 'glas' ? <GlasAlgorithm /> : undefined}
+            />
+            {p.slug === 'glas' && <AmplitudeLabs />}
+          </Fragment>
         ))}
       </div>
       <div className="mt-12 grid gap-6 sm:grid-cols-2 md:mt-16">
