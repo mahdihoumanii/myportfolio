@@ -34,33 +34,46 @@ export default function Journey() {
           className="absolute top-0 bottom-0 left-0 w-px origin-top bg-accent/70"
         />
 
-        {timeline.map((stop, i) => (
-          <motion.li
-            key={stop.id}
-            initial={reduce ? false : { opacity: 0, x: -16 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.55, ease: 'easeOut' }}
-            className={`relative pl-8 sm:pl-12 ${i < timeline.length - 1 ? 'pb-14 md:pb-20' : ''}`}
-          >
-            <span
-              aria-hidden
-              className="absolute top-1.5 -left-[5px] h-[11px] w-[11px] rounded-full border-2 bg-ink"
-              style={{ borderColor: dotColors[i % dotColors.length] }}
-            />
-            <p className="font-mono text-xs tracking-[0.2em] text-accent uppercase">
-              Chapter {numerals[i]} <span className="text-faint">— {stop.place} · {stop.period}</span>
-            </p>
-            <h3 className="mt-3 font-serif text-2xl font-semibold text-fg sm:text-3xl">{stop.title}</h3>
-            <p className="mt-1 text-sm font-medium text-muted">{stop.org}</p>
-            <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-muted">{stop.description}</p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {stop.tags.map((t) => (
-                <Tag key={t}>{t}</Tag>
-              ))}
-            </div>
-          </motion.li>
-        ))}
+        {timeline.map((stop, i) => {
+          const isCurrent =
+            stop.title.toLowerCase().includes('phd') ||
+            stop.title.toLowerCase().includes('doctoral')
+
+          const dotColor = dotColors[i % dotColors.length]
+
+          return (
+            <motion.li
+              key={stop.id}
+              initial={reduce ? false : { opacity: 0, x: -16 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: '-100px' }}
+              transition={{ duration: 0.55, ease: 'easeOut' }}
+              className={`relative pl-8 sm:pl-12 ${i < timeline.length - 1 ? 'pb-14 md:pb-20' : ''}`}
+            >
+              <span
+                aria-hidden
+                className="absolute top-1.5 -left-[5px] h-[11px] w-[11px] rounded-full border-2 bg-ink"
+                style={{
+                  borderColor: dotColor,
+                  boxShadow: isCurrent
+                    ? `0 0 10px ${dotColor}, 0 0 22px ${dotColor}, 0 0 42px ${dotColor}`
+                    : undefined,
+                }}
+              />
+              <p className="font-mono text-xs tracking-[0.2em] text-accent uppercase">
+                Chapter {numerals[i]} <span className="text-faint">— {stop.place} · {stop.period}</span>
+              </p>
+              <h3 className="mt-3 font-serif text-2xl font-semibold text-fg sm:text-3xl">{stop.title}</h3>
+              <p className="mt-1 text-sm font-medium text-muted">{stop.org}</p>
+              <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-muted">{stop.description}</p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {stop.tags.map((t) => (
+                  <Tag key={t}>{t}</Tag>
+                ))}
+              </div>
+            </motion.li>
+          )
+        })}
       </ol>
     </Section>
   )
