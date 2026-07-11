@@ -4,6 +4,7 @@ import CompactCard from './CompactCard'
 import Equation from './shared/Equation'
 import Glow from './shared/Glow'
 import MarketMotif from './MarketMotif'
+import MonteCarloLab from './MonteCarloLab'
 import { quantFeatured, quantCompact } from '../data/projects'
 import { quantEquations } from '../data/equations'
 
@@ -24,6 +25,7 @@ export default function QuantProjects() {
         {quantFeatured.map((p, i) => (
           <ProjectCard key={p.slug} project={p} index={i} serial={`QF-${String(i + 1).padStart(2, '0')}`} />
         ))}
+        <MonteCarloLab />
       </div>
 
       <div className="mt-12 grid gap-6 sm:grid-cols-2 md:mt-16 lg:grid-cols-3">
