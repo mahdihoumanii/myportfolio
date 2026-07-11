@@ -55,7 +55,6 @@ export default function CVSection() {
               View / Download PDF
             </a>
             <p className="mt-2 font-mono text-[10px] text-faint">
-              drop the file at public/{profile.cvPath}
             </p>
           </div>
           <div className="border-t border-line pt-4">
