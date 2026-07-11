@@ -23,7 +23,7 @@ export default function ProjectCard({ project, index, visual }: ProjectCardProps
       transition={{ duration: 0.6, ease: 'easeOut' }}
       className="grid items-center gap-8 rounded-xl border border-line bg-ink-2/60 p-6 sm:p-8 md:grid-cols-2 md:gap-12"
     >
-      <div className={flipped ? 'md:order-2' : ''}>
+      <div className={`min-w-0 ${flipped ? 'md:order-2' : ''}`}>
         <p className="font-mono text-xs tracking-widest text-faint uppercase">
           <span className="text-accent">{String(index + 1).padStart(2, '0')}</span> · {project.domain}
         </p>
@@ -59,7 +59,7 @@ export default function ProjectCard({ project, index, visual }: ProjectCardProps
         </div>
       </div>
 
-      <div className={flipped ? 'md:order-1' : ''}>
+      <div className={`min-w-0 ${flipped ? 'md:order-1' : ''}`}>
         {visual ? (
           visual
         ) : project.figure ? (

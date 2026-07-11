@@ -8,7 +8,7 @@ export default function Equation({ eq }: { eq: Eq }) {
     [eq.tex],
   )
   return (
-    <div className="katex-accent rounded-lg border border-line bg-ink-2 px-5 py-4">
+    <div className="katex-accent min-w-0 max-w-full rounded-lg border border-line bg-ink-2 px-5 py-4">
       <div dangerouslySetInnerHTML={{ __html: html }} />
       <p className="mt-2 font-mono text-[11px] text-faint">{eq.label}</p>
     </div>

@@ -30,7 +30,7 @@ export default function Research() {
       <Glow color="var(--color-amber)" className="-top-20 right-0 h-[420px] w-[420px]" />
       <Glow color="var(--color-violet)" className="bottom-0 -left-40 h-[380px] w-[380px]" />
       <div className="grid gap-10 md:grid-cols-[1.1fr_1fr] md:gap-14">
-        <div>
+        <div className="min-w-0">
           <p className="text-[15px] leading-relaxed text-muted">
             At RWTH Aachen I worked in the group of <span className="text-fg">Prof. Michał Czakon</span>{' '}
             (Institute for Theoretical Particle Physics and Cosmology) on precision calculations for
@@ -61,7 +61,7 @@ export default function Research() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-5">
+        <div className="flex min-w-0 flex-col gap-5">
           <StandardModel />
           {researchEquations.map((eq) => (
             <Equation key={eq.label} eq={eq} />

@@ -19,7 +19,7 @@ function Node({
 }) {
   return (
     <div
-      className="w-full rounded-md border px-3 py-2 text-center"
+      className="w-full min-w-0 rounded-md border px-3 py-2 text-center"
       style={{
         borderColor: color,
         background: filled ? `color-mix(in srgb, ${color} 18%, transparent)` : `color-mix(in srgb, ${color} 7%, transparent)`,
