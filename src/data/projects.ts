@@ -113,7 +113,7 @@ export const projects: Project[] = [
       src: 'figures/qcd/pentagons.png',
       caption: 'One-loop pentagon topologies entering the five-point amplitude',
     },
-    github: null,
+    github: 'https://github.com/mahdihoumanii/PoToQT',
   },
   {
     slug: 'einstein-telescope',
