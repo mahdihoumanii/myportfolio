@@ -72,7 +72,7 @@ export default function Bridge() {
   const draw = (delay: number) => ({
     initial: reduce ? undefined : { pathLength: 0 },
     whileInView: { pathLength: 1 },
-    viewport: { once: true, margin: '-80px' },
+    viewport: { once: true, amount: 0.15 },
     transition: { duration: 1.1, delay, ease: 'easeInOut' as const },
   })
 
@@ -86,8 +86,13 @@ export default function Bridge() {
       <Glow color="var(--color-accent)" className="top-10 -left-32 h-[400px] w-[400px]" />
       <Glow color="var(--color-cyan)" className="-right-24 bottom-0 h-[420px] w-[420px]" />
       {/* the morphing line */}
-      <div className="mb-12 overflow-x-auto">
-        <svg viewBox="0 0 800 130" className="min-w-[640px]" aria-hidden>
+      <div className="mb-12 overflow-hidden">
+        <svg
+          viewBox="0 0 800 130"
+          className="block h-auto w-full"
+          preserveAspectRatio="xMidYMid meet"
+          aria-hidden
+        >
           <motion.path {...draw(0)} d={coil} fill="none" stroke="var(--color-accent)" strokeWidth="1.6" opacity="0.9" />
           <motion.path {...draw(0.9)} d={propagator} fill="none" stroke="var(--color-muted)" strokeWidth="1.4" opacity="0.8" />
           <motion.path {...draw(1.7)} d={stochastic} fill="none" stroke="var(--color-cyan)" strokeWidth="1.6" opacity="0.9" />
