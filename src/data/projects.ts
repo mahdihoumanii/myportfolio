@@ -43,7 +43,7 @@ export const projects: Project[] = [
       'One reproducible pipeline from process definition to evaluated amplitude — with every intermediate step inspectable.',
     stack: ['Python', 'QGRAF', 'FORM', 'Mathematica', 'FiniteFlow', 'Blade'],
     figure: null, // rendered as a paper-style algorithm block instead (GlasAlgorithm)
-    github: 'null',
+    github: 'https://github.com/mahdihoumanii/glas',
   },
   {
     slug: 'qt-power',
