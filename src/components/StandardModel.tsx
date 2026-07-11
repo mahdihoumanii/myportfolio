@@ -53,7 +53,7 @@ export default function StandardModel() {
           p ? (
             <div
               key={p.symbol}
-              className="relative flex aspect-square flex-col items-center justify-center rounded-md border"
+              className="relative flex flex-col items-center justify-center rounded-md border py-2 sm:aspect-square sm:py-0"
               style={{
                 borderColor: p.focus ? 'var(--color-accent)' : `color-mix(in srgb, ${kindColor[p.kind]} 55%, transparent)`,
                 background: `color-mix(in srgb, ${kindColor[p.kind]} ${p.focus ? 16 : 8}%, transparent)`,
@@ -61,7 +61,7 @@ export default function StandardModel() {
               }}
               title={p.name}
             >
-              <span className="text-base font-semibold italic sm:text-lg" style={{ color: kindColor[p.kind] }}>
+              <span className="text-sm font-semibold italic sm:text-lg" style={{ color: kindColor[p.kind] }}>
                 {p.symbol}
               </span>
               <span className="mt-0.5 hidden text-[8.5px] leading-none text-faint sm:block">{p.name}</span>

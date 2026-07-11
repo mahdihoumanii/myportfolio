@@ -60,7 +60,7 @@ export default function Hero() {
         <motion.p {...fade(0.3)} className="mt-5 max-w-3xl font-mono text-sm leading-relaxed text-fg/90 sm:text-base">
           {profile.subtitlePrimary.join('  ·  ')}
         </motion.p>
-        <motion.p {...fade(0.38)} className="mt-1.5 max-w-3xl font-mono text-xs leading-relaxed text-muted sm:text-sm">
+        <motion.p {...fade(0.38)} className="mt-1.5 max-w-3xl font-mono text-sm leading-relaxed text-muted sm:text-base">
           {profile.subtitleSecondary.join('  ·  ')}
         </motion.p>
         <motion.p {...fade(0.5)} className="mt-6 max-w-2xl text-lg leading-relaxed text-fg/90 sm:text-xl">
