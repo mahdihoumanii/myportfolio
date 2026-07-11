@@ -27,7 +27,7 @@ export const profile = {
     },
     {
       title: 'M.Sc. Physics',
-      org: 'RWTH Aachen University· Prof. Michał Czakon',
+      org: 'RWTH Aachen University · Prof. Michał Czakon',
       period: '2022 – 2025',
       note: 'Quantum field theory & gauge theories · final grade 2.0, thesis grade 1.8 · thesis: “Power Corrections for Top-Quark Pair Transverse-Momentum Distributions”',
     },

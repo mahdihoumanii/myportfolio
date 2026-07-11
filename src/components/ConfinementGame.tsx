@@ -83,7 +83,7 @@ export default function ConfinementGame() {
       setTimeout(() => {
         setSnapped(false)
         setX(REST_X)
-      }, 2400)
+      }, 1200)
     }
   }
   const onPointerUp = () => {
