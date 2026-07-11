@@ -4,6 +4,7 @@ import Equation from './shared/Equation'
 import Glow from './shared/Glow'
 import StandardModel from './StandardModel'
 import FeynmanStory from './FeynmanStory'
+import ConfinementGame from './ConfinementGame'
 import { researchEquations } from '../data/equations'
 
 const topics = [
@@ -76,6 +77,8 @@ export default function Research() {
           </p>
         </div>
       </div>
+
+      <ConfinementGame />
     </Section>
   )
 }

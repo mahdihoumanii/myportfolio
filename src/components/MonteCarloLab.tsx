@@ -158,7 +158,7 @@ export default function MonteCarloLab() {
       className="border-t border-line pt-8 md:pt-10"
     >
       <p className="font-mono text-xs tracking-[0.2em] text-faint uppercase">
-        <span className="text-cyan">LAB-01</span> · Interactive · runs in your browser
+        <span className="text-cyan">LAB-02</span> · Interactive · runs in your browser
       </p>
       <h3 className="mt-4 font-serif text-2xl font-semibold tracking-tight text-fg sm:text-[2rem]">
         Price an option, watch the error bar shrink
