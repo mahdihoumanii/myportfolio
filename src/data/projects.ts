@@ -91,7 +91,7 @@ export const projects: Project[] = [
       src: 'figures/cs-subtraction/mtt_nlo_vs_madgraph.png',
       caption: 'NLO tt̄ invariant-mass distribution vs. MadGraph5_aMC@NLO',
     },
-    github: null,
+    github: 'https://github.com/mahdihoumanii/NLO_ttx_cs/settings',
   },
   {
     slug: 'five-point-amplitudes',
