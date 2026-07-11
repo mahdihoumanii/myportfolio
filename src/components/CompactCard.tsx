@@ -13,6 +13,7 @@ export default function CompactCard({
   serial: string
 }) {
   const reduce = useReducedMotion()
+
   return (
     <motion.article
       initial={reduce ? false : { opacity: 0, y: 24 }}
@@ -26,24 +27,37 @@ export default function CompactCard({
           <FigureSlot figure={project.figure} />
         </div>
       )}
+
       <p className="font-mono text-[11px] tracking-[0.2em] text-faint uppercase">
         <span className="text-accent">{serial}</span> · {project.domain}
       </p>
-      <h3 className="mt-2 font-serif text-xl font-semibold text-fg sm:text-2xl">{project.title}</h3>
-      <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">{project.summary}</p>
+
+      <h3 className="mt-2 font-serif text-xl font-semibold text-fg sm:text-2xl">
+        {project.title}
+      </h3>
+
+      <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
+        {project.summary}
+      </p>
+
       <div className="mt-4 flex flex-wrap gap-2">
         {project.points.map((pt) => (
           <Tag key={pt}>{pt}</Tag>
         ))}
       </div>
+
       <div className="mt-4 flex items-center justify-between gap-3 font-mono text-[11px] text-faint">
         <span>{project.stack.join(' · ')}</span>
-        {project.github ? (
-          <a href={project.github} target="_blank" rel="noreferrer" className="text-accent hover:underline">
+
+        {project.github && (
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noreferrer"
+            className="text-accent hover:underline"
+          >
             source ↗
           </a>
-        ) : (
-          <span className="whitespace-nowrap text-faint/70">[repo pending]</span>
         )}
       </div>
     </motion.article>
