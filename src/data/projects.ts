@@ -258,7 +258,7 @@ export const projects: Project[] = [
       src: 'figures/portfolio/risk_allocation.png',
       caption: 'Risk-parity allocation weights through time',
     },
-    github: null,
+    github: 'https://github.com/mahdihoumanii/portfolio_management_risk_allocation',
   },
 ]
 
