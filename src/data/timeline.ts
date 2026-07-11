@@ -46,7 +46,7 @@ export const timeline: TimelineStop[] = [
     title: 'PhD in Theoretical Particle Physics',
     org: 'Prof. Wolfgang Kilian · Cluster of Excellence “Color Meets Flavour”',
     description:
-      'Doctoral research in top-quark physics within the Cluster of Excellence — precision Standard Model phenomenology with direct connections to CERN/LHC physics.',
-    tags: ['Top-quark physics', 'Precision SM phenomenology', 'CERN / LHC'],
+      'Starting doctoral research in top-quark physics within the Cluster of Excellence “Color Meets Flavour”, working directly with the ATLAS experiment at CERN on precision Standard Model phenomenology, collider observables, and computational methods for LHC physics.',
+    tags: ['ATLAS experiment', 'Top-quark physics', 'Precision SM'],
   },
 ]
