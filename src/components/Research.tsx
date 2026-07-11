@@ -48,7 +48,7 @@ export default function Research() {
           <p className="mt-4 text-[15px] leading-relaxed text-muted">
             I am now starting a PhD in Siegen with <span className="text-fg">Prof. Wolfgang Kilian</span>,
             funded by the Cluster of Excellence <span className="text-fg">“Color Meets Flavour”</span> —
-            continuing in top-quark physics with direct connections to CERN/LHC phenomenology.
+            continuing in top-quark physics with direct connections to  <span className="text-fg">CERN/LHC</span>  phenomenology.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-2">
