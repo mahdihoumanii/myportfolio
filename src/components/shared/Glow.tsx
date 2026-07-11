@@ -11,7 +11,7 @@ export default function Glow({ color, className }: GlowProps) {
     <div
       aria-hidden
       className={`pointer-events-none absolute rounded-full blur-3xl ${className}`}
-      style={{ background: `radial-gradient(circle, ${color} 0%, transparent 70%)`, opacity: 0.13 }}
+      style={{ background: `radial-gradient(circle, ${color} 0%, transparent 70%)`, opacity: 0.17 }}
     />
   )
 }

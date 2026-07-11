@@ -8,7 +8,7 @@ export const profile = {
     'From physics in Beirut, to precision QCD and top-quark calculations in Aachen, to a PhD in Siegen within the Cluster of Excellence, I use mathematical modelling and computation to study complex systems. The same numerical discipline behind scattering amplitudes, Monte Carlo integration, and collider calculations also appears in my quantitative finance work: stochastic simulation, option pricing, rare-event estimation, volatility modelling, and risk-aware backtesting.',
   email: 'elmahdi.houmani@rwth-aachen.de',
   github: 'https://github.com/mahdihoumanii',
-  linkedin: null as string | null,
+  linkedin: 'https://www.linkedin.com/in/mohamad-elmahdi-houmani-b04258185/' as string | null,
   location: 'Germany',
   cvPath: 'cv/Mohamad_ElMahdi_Houmani_CV.pdf',
   photoPath: 'images/profile.jpg',

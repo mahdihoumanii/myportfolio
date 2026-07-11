@@ -47,7 +47,7 @@ export default function Nav() {
     >
       <nav className="mx-auto flex h-14 max-w-6xl items-center justify-between px-5 sm:px-8">
         <a href="#top" className="font-mono text-sm font-medium tracking-wide text-fg hover:text-accent">
-          M. E. Houmani
+          M. Houmani
         </a>
 
         <div className="hidden items-center gap-6 md:flex">

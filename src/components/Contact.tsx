@@ -1,4 +1,5 @@
 import Section from './shared/Section'
+import Glow from './shared/Glow'
 import { profile } from '../data/profile'
 
 export default function Contact() {
@@ -9,6 +10,8 @@ export default function Contact() {
       title="Let’s talk"
       lede="Open to conversations about research, quantitative modelling, scientific computing, and data science — academic or industry."
     >
+      <Glow color="var(--color-orange)" className="-top-10 right-0 h-[420px] w-[420px]" />
+      <Glow color="var(--color-amber)" className="bottom-0 -left-24 h-[360px] w-[360px]" />
       <div className="rounded-xl border border-line bg-ink-2/60 p-8 sm:p-10">
         <a
           href={`mailto:${profile.email}`}

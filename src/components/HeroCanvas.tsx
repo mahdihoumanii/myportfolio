@@ -9,12 +9,11 @@ import { useEffect, useRef } from 'react'
  */
 
 // Must visually match the @theme tokens in index.css.
-const BG = '#0a0e14'
 const ACCENT = '#6fd3e8'
 const RING = '#3a4a5e'
 const TARGET = '#8b98a9'
 // event-display palette: mostly warm particle tracks with cool accents
-const TRACK_COLORS = ['#ffc857', '#ffc857', '#ffb347', '#6fd3e8', '#a78bfa', '#f47ea9']
+const TRACK_COLORS = ['#ffc857', '#ffc857', '#ff9457', '#ff6b6b', '#6fd3e8', '#a78bfa', '#f47ea9']
 
 const N_TRACKS = 26
 const N_STEPS = 200
@@ -118,8 +117,8 @@ export default function HeroCanvas() {
     }
 
     const drawFrame = (trackP: number, beamP: number, m: number, alpha: number) => {
-      ctx.fillStyle = BG
-      ctx.fillRect(0, 0, W, H)
+      // transparent background: the page's warm ambient gradients show through
+      ctx.clearRect(0, 0, W, H)
       const v = vertex()
 
       // detector rings, fading out as the event becomes stochastic

@@ -11,6 +11,8 @@
   --color-accent: #6fd3e8;
   --color-accent-dim: #2b6a7a;
   --color-amber: #ffc857;
+  --color-orange: #ff9457;
+  --color-red: #ff6b6b;
   --color-violet: #a78bfa;
   --color-rose: #f47ea9;
   --color-green: #7ee29a;
@@ -31,6 +33,13 @@ html {
 
 body {
   background-color: var(--color-ink);
+  /* warm ambient light so the dark theme never reads as flat black */
+  background-image:
+    radial-gradient(1100px 750px at 85% -5%, rgba(255, 148, 87, 0.13), transparent 60%),
+    radial-gradient(950px 650px at -10% 35%, rgba(255, 200, 87, 0.09), transparent 60%),
+    radial-gradient(900px 650px at 110% 65%, rgba(167, 139, 250, 0.1), transparent 60%),
+    radial-gradient(1000px 700px at 40% 115%, rgba(255, 107, 107, 0.09), transparent 60%);
+  background-attachment: fixed;
   color: var(--color-fg);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;

@@ -1,6 +1,29 @@
+import { useState } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
 import { profile } from '../data/profile'
 import HeroCanvas from './HeroCanvas'
+
+function HeroPhoto() {
+  const [failed, setFailed] = useState(false)
+  if (failed) return null
+  return (
+    <div
+      className="rounded-full p-[3px]"
+      style={{
+        background:
+          'conic-gradient(from 210deg, var(--color-amber), var(--color-orange), var(--color-accent), var(--color-violet), var(--color-amber))',
+        boxShadow: '0 0 36px color-mix(in srgb, var(--color-orange) 30%, transparent)',
+      }}
+    >
+      <img
+        src={`${import.meta.env.BASE_URL}${profile.photoPath}`}
+        alt={profile.name}
+        onError={() => setFailed(true)}
+        className="aspect-square w-28 rounded-full border-4 border-ink object-cover sm:w-44 lg:w-52"
+      />
+    </div>
+  )
+}
 
 export default function Hero() {
   const reduce = useReducedMotion()
@@ -18,15 +41,22 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink to-transparent" />
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-5 sm:px-8">
-        <motion.p {...fade(0.05)} className="mb-5 font-mono text-xs tracking-[0.3em] text-accent uppercase">
-          Beirut → Aachen → Siegen → CERN/LHC
-        </motion.p>
-        <motion.h1
-          {...fade(0.15)}
-          className="max-w-4xl text-4xl font-semibold tracking-tight text-fg sm:text-6xl"
-        >
-          {profile.name}
-        </motion.h1>
+        <div className="flex flex-col-reverse items-start justify-between gap-8 md:flex-row md:items-center">
+          <div className="min-w-0">
+            <motion.p {...fade(0.05)} className="mb-5 font-mono text-xs tracking-[0.3em] text-accent uppercase">
+              Beirut → Aachen → Siegen → CERN/LHC
+            </motion.p>
+            <motion.h1
+              {...fade(0.15)}
+              className="max-w-4xl text-4xl font-semibold tracking-tight text-fg sm:text-6xl"
+            >
+              {profile.name}
+            </motion.h1>
+          </div>
+          <motion.div {...fade(0.25)} className="shrink-0 md:pr-4">
+            <HeroPhoto />
+          </motion.div>
+        </div>
         <motion.p {...fade(0.3)} className="mt-5 max-w-3xl font-mono text-sm leading-relaxed text-fg/90 sm:text-base">
           {profile.subtitlePrimary.join('  ·  ')}
         </motion.p>
