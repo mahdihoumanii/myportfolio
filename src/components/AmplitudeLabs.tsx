@@ -149,8 +149,39 @@ function TameTheInfrared() {
         {/* the gluon marker */}
         <circle cx={mx} cy={my} r="14" fill={hot ? OXBLOOD : GOLD} opacity="0.15" />
         <circle cx={mx} cy={my} r="5" fill={hot ? OXBLOOD : GOLD} />
-        {/* meter */}
-        <rect x={IR.x0} y={IR_H - 22} width={IR.x1 - IR.x0} height="4" fill={LINE} rx="2" />
+        {/* matrix-element readout inside the plot */}
+        <rect
+          x={IR.x1 - 210}
+          y={IR.y0 + 10}
+          width="198"
+          height="25"
+          rx="3"
+          fill="var(--color-ink)"
+          opacity="0.82"
+        />
+              
+        <text
+          x={IR.x1 - 20}
+          y={IR.y0 + 27}
+          textAnchor="end"
+          fontSize="11"
+          fill={hot ? OXBLOOD : subtracted ? EMERALD : GOLD}
+          className="font-mono"
+        >
+          |M|² / |M₀|² ≈ 10^{logW.toFixed(1)}
+          {hot ? '  ⚠ divergence' : ''}
+        </text>
+              
+        {/* intensity meter */}
+        <rect
+          x={IR.x0}
+          y={IR_H - 22}
+          width={IR.x1 - IR.x0}
+          height="4"
+          fill={LINE}
+          rx="2"
+        />
+              
         <motion.rect
           x={IR.x0}
           y={IR_H - 22}
@@ -160,9 +191,6 @@ function TameTheInfrared() {
           transition={{ duration: 0.12 }}
           fill={hot ? OXBLOOD : subtracted ? EMERALD : GOLD}
         />
-        <text x={IR.x1} y={IR_H - 28} textAnchor="end" fontSize="11" fill={hot ? OXBLOOD : FAINT} className="font-mono">
-          |M|²/|M₀|² ≈ 10^{logW.toFixed(1)}{hot ? '  ⚠ divergence' : ''}
-        </text>
       </svg>
     </div>
   )
