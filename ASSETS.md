@@ -7,7 +7,6 @@ placeholder on the site that prints its own path, so nothing breaks meanwhile.
 
 | Asset | Path | Shows up in |
 |---|---|---|
-| CV (PDF) | `public/cv/Mohamad_ElMahdi_Houmani_CV.pdf` | CV section button |
 | Einstein Telescope figure *(optional)* | `public/figures/einstein-telescope/mirror_simulation.png` | compact physics card |
 | Combustion figure *(optional)* | `public/figures/combustion/combustion_visualization.png` | compact physics card |
 
@@ -25,6 +24,7 @@ placeholder on the site that prints its own path, so nothing breaks meanwhile.
 | Figure | Source |
 |---|---|
 | `public/images/profile.jpg` | ✓ provided |
+| `public/cv/Mohamad_ElMahdi_Houmani_CV.pdf` | ✓ provided |
 | `figures/qt-power/pc_corrected_13tev.png` | qT paper, `doc/paper/plots/pc_corrected_13tev.pdf` |
 | `figures/cs-subtraction/mtt_nlo_vs_madgraph.png` | CS report figure |
 | `figures/qcd/pentagons.png` | Master's thesis, Ch. 3 |
