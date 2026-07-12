@@ -260,6 +260,27 @@ export const projects: Project[] = [
     },
     github: 'https://github.com/mahdihoumanii/portfolio_management_risk_allocation',
   },
+  {
+    slug: 'proofmatch',
+    title: 'ProofMatch — Probabilistic Matchmaking Engine',
+    section: 'quant',
+    tier: 'compact',
+    domain: 'Applied AI · Prototype',
+    summary:
+      'An early-stage applied-AI experiment: matching professionals at networking events as a calibrated probability problem — logistic match-probability scoring with confidence intervals, ranking diagnostics, and LLM-generated match rationales behind a Streamlit dashboard.',
+    points: [
+      'Logistic probability scoring',
+      'Confidence intervals',
+      'Ranking diagnostics',
+      'LLM-generated rationales',
+      'Streamlit dashboard',
+    ],
+    conclusion:
+      'A prototype, stated as such — the interesting part is treating matchmaking as a calibrated probability problem, not a filter.',
+    stack: ['Python', 'Streamlit', 'OpenAI API'],
+    figure: null,
+    github: 'https://github.com/mahdihoumanii/proofmatch',
+  },
 ]
 
 export const physicsFeatured = projects.filter((p) => p.section === 'physics' && p.tier === 'featured')

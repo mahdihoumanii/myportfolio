@@ -28,7 +28,7 @@ export default function QuantProjects() {
         <MonteCarloLab />
       </div>
 
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 md:mt-16 lg:grid-cols-3">
+      <div className="mt-12 grid gap-6 sm:grid-cols-2 md:mt-16">
         {quantCompact.map((p, i) => (
           <CompactCard
             key={p.slug}
